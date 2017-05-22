@@ -1,0 +1,14 @@
+task wrapper(type: Wrapper) {
+	gradleVersion = '3.3'
+	distributionType = Wrapper.DistributionType.ALL
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+
+	repositories {
+		mavenCentral()
+	}
+}
+

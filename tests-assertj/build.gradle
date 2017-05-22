@@ -1,0 +1,47 @@
+def assertj = [
+    targetDir: file('src-gen/test/java')
+];
+
+configurations {
+    testAssertJ
+}
+
+sourceSets {
+	test {
+		java {
+			srcDirs 'src-gen/test/java'
+		}
+	}
+}
+
+dependencies {
+	testCompile project(':system-under-test')
+	testCompile 'junit:junit:4.12'
+	testCompile 'org.springframework:spring-test:4.3.5.RELEASE'
+	testCompile 'org.assertj:assertj-core:3.6.2'
+
+	testAssertJ 'org.assertj:assertj-assertions-generator:2.0.0'
+	testAssertJ project(':system-under-test')
+}
+
+
+task cleanAssertJ(type: Delete) {
+    delete "${assertj.targetDir}/de"
+}
+
+
+task genAssertJ(dependsOn: cleanAssertJ, type: JavaExec) {
+    doFirst {
+        if (! assertj.targetDir.exists()) {
+            logger.info("Creating `$assertj.targetDir` directory")
+            assertj.targetDir.mkdirs()
+        }
+    }
+    
+    main 'org.assertj.assertions.generator.cli.AssertionGeneratorLauncher'
+    classpath = files(configurations.testAssertJ)
+    workingDir = assertj.targetDir
+    args = ['de.adesso.expressivetesting.system.domain']
+}
+
+compileTestJava.dependsOn(genAssertJ)

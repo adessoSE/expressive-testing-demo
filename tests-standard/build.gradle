@@ -1,0 +1,5 @@
+dependencies {
+	testCompile project(':system-under-test')
+	testCompile 'junit:junit:4.12'
+	testCompile 'org.springframework:spring-test:4.3.5.RELEASE'
+}
