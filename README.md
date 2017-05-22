@@ -19,3 +19,15 @@ Examples for demonstrating how to implement expressive tests using the following
 
 
 ## Modules
+
+* __system-under-test__   
+    Implementation of an example system that is being tested.
+
+* __tests-standard__   
+    Demonstration of guidelines for implementing tests using JUnit 4.
+
+* __tests-assertj__
+    Demonstration of guidelines for implementing tests using AssertJ.
+
+* __tests-junit5__   
+    Demonstration of guidelines for implementing tests using JUnit 5.
