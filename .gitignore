@@ -1,0 +1,10 @@
+*/build
+*/target
+*/bin
+*/src-gen
+
+.gradle
+
+*/.project
+*/.classpath
+*/.settings
