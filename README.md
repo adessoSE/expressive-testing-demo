@@ -9,12 +9,12 @@ Examples for demonstrating how to implement expressive tests using the following
 
 ## Setup
 
-0. Make sure Java 8 is installed:   
-   `java -version`
-1. Build the modules:   
-   `gradlew build`
-2. [Optional] Configure eclipse IDE:   
-   `gradlew eclipse`
+1. Make sure Java 8 is installed:   
+    `java -version`
+2. Build the modules:   
+    `gradlew build`
+3. [Optional] Configure eclipse IDE:   
+    `gradlew eclipse`
 
 
 ## Modules
